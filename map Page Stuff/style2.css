@@ -1,0 +1,498 @@
+/* General */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    padding: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Transition */
+a, .btn{
+    transition: all 300ms ease;
+}
+
+/* Desktop Nav */
+
+nav, .nav_links{
+    display: flex;
+    
+}
+
+/* how to change position of elements 
+.icon{
+    padding: 10px 10px 20px 40px;
+} 
+*/
+
+nav{
+    justify-content: space-around;
+    align-items: center;
+    height: 12vh;
+    background-color: white;
+}
+
+.nav_links{
+    gap: 2rem;
+    /* How to get rid of the dots in front of lists*/
+    list-style: none;
+    font-size: 1.5rem;
+    font-weight: 200;
+    padding-left: 550px;
+    padding-right: 10px;
+  
+}
+
+.social_media_frame {
+    display: flex;
+    justify-content: end;
+ 
+}
+
+/* Social Media Imgs */
+.social_image{
+    cursor: pointer;
+    padding-right: 40px;
+   
+}
+
+/* Main Page Settings */
+
+.stuff {
+    justify-content:center;
+    display: flex;
+    gap: 2.5rem;
+    /* padding-top: 100px; */
+   
+}
+
+
+.textfield {
+   
+    display:inline;
+    justify-self: center;
+    text-align: center;
+    /* background-color: #5ba4d1; */
+    padding: 70px 10px 0px 10px;
+
+}
+
+#searchTextField {
+    height: 50px;
+    width: 300px;
+}
+
+#text1 {
+    align-self: center;
+    text-align: center;
+    color: black;
+    font-size: 50px;
+    color: #5ba4d1;
+    
+}
+
+#text2 {
+    align-self: center;
+    text-align: center;
+    color: black;
+    font-size: 30px;
+   font-weight: 100;
+   
+}
+
+#map {
+    padding-top: 60px;
+    height: 600px;
+    width: 700px;
+    border: #5ba4d1 10px solid;
+    
+    /* Adjust height as needed */
+}
+
+/* Text Box Settings*/
+.input-group {
+    position: relative;
+    margin: 20px 0;
+}
+
+
+
+.input-group input {
+    width: 320px;
+    height: 40px;
+    font-size: 16px;
+    color: black;
+    padding: 0 10px;
+    background: transparent;
+    border: 3px solid #5ba4d1;
+    outline: none;
+    border-radius: 5px;
+}
+
+.input-group input:focus~label,
+.input-group input:valid~label {
+    top: 0;
+    font-size: 12px;
+    background: #fff;
+}
+
+#bottom-pic{
+    width: 500px;
+}
+
+/* End of Main Page Settings */
+
+
+a {
+    /* How to get rid of underlined purple hyperlinks*/
+    text-decoration: none; 
+    /*text-decoration-color: white;*/
+    color: black;
+
+}
+
+a:hover{
+    color: #6cb0da;
+    text-decoration: underline;
+    text-decoration-color: #6cb0da;
+    text-underline-offset: .75rem;
+}
+
+.icon{
+    color: black;
+    font-size: 2rem;
+    font-weight: 500;
+    padding-left: 0px;
+}
+
+#flower{
+    padding-left: 20px;
+}
+
+.icon:hover{
+    cursor: default;
+}
+
+/* Mobile Menu */
+
+#mobile-nav{
+    display: none;
+}
+
+.mobile_menu{
+    position: relative;
+    display: inline-block;
+}
+
+.mobile_icon{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 24px;
+    width: 30px;
+    cursor: pointer;
+}
+
+/* Mobile Veiw */
+.mobile_icon span{
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    transition: all 0.3 ease-in-out;
+}
+
+.mobile_links{
+    position: absolute;
+    /* How to change Menu postion from icon*/
+    top: 170%;
+    right: 0;
+    list-style: none;
+    width: fit-content;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3 ease-in-out;
+    background-color: #2e2f34;
+    /* Nav Menu Border */
+    border-color: rgb(107, 203, 206);
+    border-radius: 0rem;
+    transition: all 500ms ease;
+}
+
+
+.mobile_links a{
+    display: block;
+    padding: 10px;
+    text-align: center;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color:rgb(107, 203, 206);
+    transition: all 0.3 ease-in-out;
+}
+
+.mobile_links a:hover {
+    background-color: #17171a;
+    color: white;
+}
+
+.mobile_links li{
+    list-style: none;
+}
+
+.mobile_links.open{
+    max-height: 300px;
+    transition: all 700ms ease;
+}
+
+
+/* Icon Line Animation Settings */
+.mobile_icon.open span:first-child {
+    transform: rotate(45deg) translate(10px, 5px);
+    transition: all 500ms ease;
+}
+.mobile_icon.open span:nth-child(2) {
+    opacity: 0;
+    transition: all 500ms ease;
+}
+.mobile_icon.open span:last-child {
+    transform: rotate(-45deg) translate(10px, -5px);
+    transition: all 500ms ease;
+}
+
+.mobile_icon span:first-child {
+    transform: none;
+    transition: all 500ms ease;
+}
+.mobile_icon span:nth-child(2) {
+    opacity: 1;
+    transition: all 500ms ease;
+}
+.mobile_icon span:last-child {
+    transform: none;
+    transition: all 500ms ease;
+}
+
+/* Section */
+section {
+    padding-top: 4vh;
+    height: 96vh;
+    margin: 0 0rem;
+    box-sizing: border-box;
+    min-height: fit-content;
+}
+
+.section_frame{
+    display: flex;
+    
+}
+
+/* About Me Section */
+
+
+#profile_info{
+    display: flex;
+    justify-content: end;
+    gap: 1rem;
+    height: 88vh;
+    background-color: #6cb0da;
+    /* main page settings */
+
+}
+
+.section_pic_frame{
+    display: flex;
+    align-items:center;
+    margin-bottom: 3rem;
+}
+
+#main-pic {
+    align-items: end;
+    height: 600px;
+    padding-right: 70px;
+}
+
+
+.section_text{
+    align-self: center;
+    text-align: center;
+    color: white;
+    padding-right: 60px;
+    padding-left: 130px;
+   /* background-color: plum; */
+}
+
+/* .section_text p{
+    /* font-weight: 600; */
+
+
+.section_p1 {
+    text-align: center;
+    color: white;
+    font-size: 2.7rem;
+    font-weight: 500;
+}
+
+.section_p2{
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 100;
+    padding-bottom: 20px;
+    padding-top: 10px;
+}
+
+.name_h1 {
+    font-size: 4rem;
+    text-align: center;
+    color: rgb(107, 203, 206);
+}
+
+
+#linkedin_pic {
+    width: 55px;
+    height: 55px;
+}
+
+#github_pic {
+    width: 40px;
+    height: 40px;
+    padding-bottom: 8px;
+}
+
+/* Btn */
+.btn_frame {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.btn {
+    font-weight: 600;
+    transition: all 300ms ease;
+    padding: 1rem;
+    width: 10rem;
+    height: 4rem;
+
+}
+
+.btn_color1, .btn_color2 {
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    border: none;
+    /* border: 2px  solid #2e2f34; */
+    transition: all 700ms ease;
+    border-radius: 12px;
+
+}
+
+/*
+.btn_color1 {
+    border:  1.7px  solid rgb(46, 46, 46);
+}
+*/
+
+.btn_color1:hover, .btn_color2:hover {
+    border: none;
+    background-color: white;
+    color: #17171a;
+    box-shadow: inset 0 0 11px #c1c1c1;
+    box-shadow: inset 0 0 9px #919090;
+    box-shadow: inset 0 0 7px #6d6d6d;
+
+    transition: all 700ms ease;
+}
+
+/* .btn_color1:hover {
+    border: none;
+    background-color: rgb(107, 203, 206);
+    color: #2e2f34;
+    transition: all 700ms ease;
+} */
+
+.start_background {
+    background-color: #2e2f34;
+    width: 100%;
+    width: 100vh;
+    justify-content: center;
+}
+
+/* Abt section */
+.abt_background {
+    background-color: #34353a;
+    width: 100%;
+    height: 100vh;
+}
+
+p, h3, h2 {
+    color: white;
+}
+
+.square {
+    position:absolute;
+    top: 0;
+    left: 820px;
+    width: 700px; /* Adjust width as needed */
+    height: 825px; /* Adjust height as needed */
+    background-color: #5ba4d1; /* Adjust color as needed */
+    z-index: -1; /* Ensure the square stays behind other content */
+}
+
+audio {
+    padding-top: 19px;
+}
+
+#accountPage {
+    display: none;
+    position:absolute;
+    top: 25%;
+    left: 87%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 3rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+    width: max-content;
+   
+    
+}
+
+#user, #email{
+    display: flex;
+    justify-content:start;
+    font-size: 1.1rem;
+    font-weight: 100;
+    color: #17171a;
+}
+
+
+
+/* #accountPage p {
+    font-size: 1.1rem;
+    font-weight: 100;
+    color: #17171a;
+   
+} */
+#streak {
+    display: flex;
+    justify-content:center;
+    color: #07c1ff;
+    font-weight: bold;
+}
+
+.pfp {
+    padding-left: 60px;
+    width: 130px;
+    display: flex;
+    justify-content:center;
+
+}

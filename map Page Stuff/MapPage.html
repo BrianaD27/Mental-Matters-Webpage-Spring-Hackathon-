@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="mediaQueries.css">
+    <link rel="stylesheet" href="normalize.css">
+    <title>Document</title>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB06pOIRXZ5Z3donqRuvXx8Zaq4-k_NCbI&libraries=places"></script>
+</head>
+
+<script>
+    var map; 
+    var service;
+    var infowindow;
+
+    function initialize() {
+        var pyrmont = new google.maps.LatLng(37.2279,-77.4019);
+
+        map = new google.maps.Map(document.getElementById('map'),{
+            center: pyrmont,
+            zoom: 15
+        })
+
+        var input = document.getElementById('searchTextField')
+
+        let autocomplete = new google.maps.places.Autocomplete(input)
+
+        autocomplete.bindTo('bounds', map)
+
+        let marker = new google.maps.Marker({
+            map:map
+        })
+
+        google.maps.event.addListener(autocomplete, 'place_changed', () => {
+            let place = autocomplete.getPlace()
+            console.log(place)
+            console.log(place.photos[0].getUrl())
+
+            if(place.geometry.viewport){
+                map.fitBounds(place.geometry.viewport)
+            } else {
+                map.setCenter(place.geometry.location)
+                map.setZoom(17)
+            }
+
+            marker.setPosition(place.geometry.location)
+            marker.setVisible(true)
+
+            var request = {
+                location: place.geometry.location,
+                radius: '500',
+                type: ['doctor']
+            }
+
+            service = new google.maps.places.PlacesService(map)
+            service.nearbySearch(request, callback)
+        })
+    }
+
+    function callback(results, status) {
+        if (status == google.maps.places.PlacesServiceStatus.OK) {
+            for (var i =0; i< results.length; i++ ) {
+                var place = results[i];
+                createMarker(results[i]);
+            }
+        }
+    }
+
+    function createMarker(place) {
+        var marker = new google.maps.Marker({
+            map:map,
+            position: place.geometry.location
+        });
+
+        google.maps.event.addListener (marker, 'click', function () {
+            alert(place.name);
+            window.open(place.photos[0].getUrl(), "_blank");
+            infowindow.open(map, this);
+        });
+    }
+
+    google.maps.event.addDomListener(window, 'load', initialize)
+</script>
+
+<body>
+    <nav id="website_nav">
+        <div id="flower">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAArNJREFUaEPtWe1xwyAMhe7SdIw6GyR7eIcmO3iPZIO6YzTdpfQAO4EgyZKMz5dr/NcG9PTx9IStefDHPrj95glg7QguEoH29NMY6z6MMc0AsDfOfXX7t0NtwNUBtKfvg7HWG18+zh1rg6gKgDR+hOPsttu/9rUiURfA+fKZpA1mY9/tNtvVAYQ8D89vY8xL773ani+OY1i329i43q81Zk5aqSLQ8jxNYfEpNBZ4/E5ZH2IArDznhKFSkYsALGq8ssiXAtAbZ48j21zzHaPXPBqiIpcB4OQ+QZPMCK4IgFGIQ5f2dAs/jD3ShbIIRIkAHy44mGQxwT4eiAiAX4AeLuiwaBSExqsABBCA3vHNScKeRdNTGP8/AaBMUiOFjBExkDgCEzTIPpyW3DK1KstbSusHPTN9OKMXsB0hjwCrkeFDy2QPiCywMoBBWY4SO7JWMWLihCVkI2EKEY1MwqHUt0sCwHpALds1M0ERgaHBhFuEaFictlIjkUIshxQZsiL3ExX7PmzV3DdMCAA81zp39Juk499tLJwzUr4E52TSO7+SSd1QgCwBTFHlUKTQHMscNUGWYRU6UB8AAGahhojk6cWiyTsjWIaPMeAAIBUnlNOFQfyLLUZTy06EBCNIo8xUuG0Og/CFl1wt3kZMFZsh9AoDoAYXjFkE/C31fChyRK6jjUxzCIfHa+9LdmLuTVsWlPlDfRFjaliiAWhSiRBj4toiKHtEOamFaoW81j734ZkEoGIMoOjE6cgkBRYAFYikFsTeZxrv7WIDUIC4SgaR9wXGiwGIQTgbf2Rgl2F5Qmf3qVwhK4oAQ1Ln5w4KFv1nRmicxQGMB4T8Dl4Gf+zFuQJ9l8sLrtHpd+oIQIclYMYBxH/m9VAciMKQlOt/jdGLAZhrjGZ91QhoDJi75glgrgfnrv8DU/73QIjO9GQAAAAASUVORK5CYII="/>
+        </div>
+        <div class="icon">Mental Matters</div>
+        <div>
+            <ul class="nav_links">
+                <li><a href="/main page/StarterPage(1).html">Home</a></li>
+                <li><a href="MapPage.html">Find a Therapist</a></li>
+                <li><a href="/jounalindex.html">Journal</a></li>
+                <li><a href="/chatbox.html">TalkItOut</a></li>
+                <!-- <li id="account"><a href="#account">Account</a></li> -->
+                
+            </ul>
+        </div>
+        <div>
+            <img class="social_image" id="linkedin_pic" src="./MapImg/blank.png" onclick="toggleAccountPage()">
+            
+             <!-- Account page content -->
+             <div id="accountPage">
+                <img class="pfp" id="pfp" src="./MapImg/blank.png" width="200px">
+                <p id="user"> <strong>Username: </strong> &nbsp;VsuStudent27</p>
+                <p id="email"><strong>Email:</strong> &nbsp; student21@gmail.com</p>
+                <br>
+                <p id="streak">Journal Streak: 5</p>
+
+
+                <!-- Add your account page content here -->
+            </div>
+
+            <script>
+                // Function to toggle the visibility of the account page
+                function toggleAccountPage() {
+                    var accountPage = document.getElementById("accountPage");
+                    if (accountPage.style.display === "none") {
+                        accountPage.style.display = "block";
+                    } else {
+                        accountPage.style.display = "none";
+                    }
+                }
+            </script>
+        </div>
+        </div>
+    </nav>
+
+    <nav id="mobile-nav">
+        <div class="icon">Mental Matters</div>
+        <div class="mobile_menu">
+            <div class="mobile_icon" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>  
+
+            <div class="mobile_links">
+                <li><a href="StarterPage.html" onclick="toggleMenu()">Home</a></li>
+                <li><a href="/main page/StarterPage.html" onclick="toggleMenu()">Find a Therapist</a></li>
+                <li><a href="#projects" onclick="toggleMenu()">Journal</a></li>
+                <li><a href="/chatbox.html" onclick="toggleMenu()">TalkItOut</a></li>
+            </div>
+        </div>
+    </nav>
+
+    <div class="stuff">
+        <div id="map"></div>
+        <div class="textfield">
+            <h1 id="text1">It's Okay to Reach Out</h2>
+            <h3 id="text2">Find Therapists Near You </h2>
+           
+            <div class="input-group">
+                <input id="searchTextField" type="text">
+
+            </div>
+            <br>
+            <br>
+            <br>
+            <img id="bottom-pic" src="./MapImg/mental2.0.png" id="Pic">
+        </div>
+        
+    </div>
+    <!-- <div class="square"></div> -->
+    <audio controls autoplay loop>
+        <source src="./MapImg/This is a Jazz Space - Midnight North.mp3"
+    </audio>
+        
+  
+</body>
+</html>

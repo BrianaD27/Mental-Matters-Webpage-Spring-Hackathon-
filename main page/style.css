@@ -1,0 +1,631 @@
+
+
+#accountPage {
+    display: none;
+    position:absolute;
+    top: 25%;
+    left: 87%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 3rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+    width: max-content;
+   
+    
+}
+
+#user, #email{
+    display: flex;
+    justify-content:start;
+    font-size: 1.1rem;
+    font-weight: 100;
+    color: #17171a;
+}
+
+
+
+/* #accountPage p {
+    font-size: 1.1rem;
+    font-weight: 100;
+    color: #17171a;
+   
+} */
+#streak {
+    display: flex;
+    justify-content:center;
+    color: #07c1ff;
+    font-weight: bold;
+}
+
+.pfp {
+    padding-left: 60px;
+    width: 130px;
+    display: flex;
+    justify-content:center;
+
+}
+    
+#content_container {
+    width: 35%;
+    height: 70%;
+
+}
+#form_container {
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    /* background-color: #370617; */
+    box-shadow:  0 0 50px -20px #000;
+    border-radius: 2%;
+
+    overflow: hidden;
+}
+#form_header_container {
+    width: 100%;
+    height: 5%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: left;
+
+    padding: 20px;
+    padding-bottom: 30px;
+    padding-top: 30px;
+
+    border-bottom: 1px solid transparent;
+    border-image: -webkit-linear-gradient(25deg, #FFBE08, #FB5607, #FF006E, #8338EC, #3A86FF)  20;
+    background: #fff;
+}
+#form_header {
+    display: inline-block;
+    font-size: 15px;
+    font-family: Bowlby One SC;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: #fff;
+    -webkit-text-fill-color: #6cb0da;
+    /* background: -webkit-linear-gradient(25deg, #FFBE08, #FB5607, #FF006E, #8338EC, #3A86FF);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent; */
+}
+#form_content_container {
+    width: 100%;
+    height: 150%;
+
+    float: left;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding-top: 30px;
+}
+#form_content_inner_container {
+    width: 85%;
+    height: 1%;
+
+    float: center;
+}
+
+input {
+    width: 76%;
+    height: 40px;
+
+    padding-left: 10px;
+    margin-bottom: 20px;
+    justify-content: center;
+
+    
+    font-family: Montserrat;
+    font-weight: 500;
+    color: #6cb0da;
+    font-size: 12px;
+
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 2%;
+    border-top-right-radius: 2%;
+    border-image: -webkit-linear-gradient(25deg, #FFBE08, #FB5607, #FF006E, #8338EC, #3A86FF) 1;
+}
+
+#form_content_inner_container button {
+    width: 15%;
+    height: 40px;
+    /* float: left; */
+    padding-right: 10px;
+    margin-right: 40px;
+    justify-content: right;
+    align-items: right;
+    /* columns: inherit; */
+    background: #fff;
+    font-family: Montserrat;
+    letter-spacing: 1px;
+    font-weight: 900;
+    font-size: 12px;
+
+    cursor: pointer;
+
+    /* display: flex; */
+   
+    /* align-items: center; */
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 1%;
+    border-top-right-radius: 1%;
+    border-image: -webkit-linear-gradient(25deg, #FFBE08, #FB5607, #FF006E, #8338EC, #3A86FF) 1;
+}
+
+ 
+#userInput {
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+    margin-top: 60px;
+    }
+#textInput {
+    width: 90%;
+    border: none;
+    border-bottom: 3px solid black;
+    font-family: monospace;
+    font-size: 17px;
+    }
+.userText {
+    color: black;
+    font-family: monospace;
+    font-size: 17px;
+    text-align: left;
+    line-height: 30px;
+    }
+.userText span {
+    /* background-color: #808080; */
+    /* padding: 10px; */
+    border-radius: 2px;
+    }
+
+.background {
+
+    background-image: url("/img/flat-design-world-mental-health-day-background-vector");
+    background-size: 86%;
+    background-position-x: right;
+    background-attachment: fixed;
+
+}
+.botText {
+    color: black;
+    font-family: monospace;
+    font-size: 17px;
+    text-align: left;
+    line-height: 30px;
+    }
+.botText span {
+    /* background-color: #b4c0e3; */
+    /* padding: 10px; */
+    border-radius: 2px;
+    }
+#tidbit {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 300px;
+    }
+.boxed {
+    /* margin-left: auto;
+    margin-right: auto; */
+
+    /* /* width: 78%;
+    height: 100%;
+    margin-top: 60px; */
+   
+    width: 100%;
+    height: 150%;
+
+    float: left;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding-top: 30px;
+    }
+
+    html, body {
+    width: 100%;
+    height: 100%;
+    
+    /* background: -webkit-linear-gradient(25deg, #ffbe0b, #FB5607, #FE006E, #8338FC, #3A86FF ); */
+
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding-left: 20px;
+}
+
+    
+#content_container {
+    width: 35%;
+    height: 70%;
+
+}
+#form_container {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    /* background-color: #370617; */
+    box-shadow:  0 0 50px -20px #000;
+    border-radius: 2%;
+
+    overflow: hidden;
+}
+#form_header_container {
+    width: 100%;
+    height: 5%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: left;
+
+    padding: 20px;
+    padding-bottom: 30px;
+    padding-top: 30px;
+
+    border-bottom: 1px solid transparent;
+    border-image: -webkit-linear-gradient(25deg, #FFBE08, #FB5607, #FF006E, #8338EC, #3A86FF)  20;
+    background: #fff;
+}
+#form_header {
+    display: inline-block;
+    font-size: 15px;
+    font-family: Bowlby One SC;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: #fff;
+    -webkit-text-fill-color: #6cb0da;
+    /* background: -webkit-linear-gradient(25deg, #FFBE08, #FB5607, #FF006E, #8338EC, #3A86FF);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent; */
+}
+#form_content_container {
+    width: 100%;
+    height: 110%;
+
+    float: left;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding-top: 30px;
+}
+#form_content_inner_container {
+    width: 85%;
+    height: 1%;
+
+    float: center;
+}
+
+input {
+    width: 76%;
+    height: 40px;
+
+    padding-left: 10px;
+    margin-bottom: 20px;
+    justify-content: center;
+
+    
+    font-family: Montserrat;
+    font-weight: 500;
+    color: #6cb0da;
+    font-size: 12px;
+
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 2%;
+    border-top-right-radius: 2%;
+    border-image: -webkit-linear-gradient(25deg, #FFBE08, #FB5607, #FF006E, #8338EC, #3A86FF) 1;
+}
+
+#form_content_inner_container button {
+    width: 15%;
+    height: 40px;
+    /* float: left; */
+    padding-right: 10px;
+    margin-right: 40px;
+    justify-content: right;
+    align-items: right;
+    /* columns: inherit; */
+    background: #fff;
+    font-family: Montserrat;
+    letter-spacing: 1px;
+    font-weight: 900;
+    font-size: 12px;
+
+    cursor: pointer;
+
+    /* display: flex; */
+   
+    /* align-items: center; */
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 1%;
+    border-top-right-radius: 1%;
+    border-image: -webkit-linear-gradient(25deg, #FFBE08, #FB5607, #FF006E, #8338EC, #3A86FF) 1;
+}
+
+ 
+#userInput {
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+    margin-top: 60px;
+    }
+#textInput {
+    width: 90%;
+    border: none;
+    border-bottom: 3px solid black;
+    font-family: monospace;
+    font-size: 17px;
+    }
+.userText {
+    /*what i changed*/
+    color: black;
+    font-family: monospace;
+    font-size: 17px;
+    text-align: left;
+    line-height: 30px;
+    }
+.userText span {
+    /* background-color: #808080; */
+    /* padding: 10px; */
+    border-radius: 2px;
+    }
+.botText {
+    color: black;
+    font-family: monospace;
+    font-size: 17px;
+    text-align: left;
+    line-height: 30px;
+    }
+.botText span {
+    /* background-color: #b4c0e3; */
+    /* padding: 10px; */
+    border-radius: 2px;
+    }
+#tidbit {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 300px;
+    }
+.boxed {
+    /* margin-left: auto;
+    margin-right: auto; */
+
+    /* /* width: 78%;
+    height: 100%;
+    margin-top: 60px; */
+    width: 100%;
+    height: 150%;
+
+    float: left;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding-top: 30px;
+    }
+
+
+    /* General */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    padding: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Transition */
+a, .btn{
+    transition: all 300ms ease;
+}
+
+/* Desktop Nav */
+
+nav, .nav_links{
+    display: flex;
+    
+}
+
+/* how to change position of elements 
+.icon{
+    padding: 10px 10px 20px 40px;
+} 
+*/
+
+nav{
+    justify-content: space-around;
+    align-items: center;
+    height: 12vh;
+    background-color: white;
+}
+
+.nav_links{
+    gap: 2rem;
+    /* How to get rid of the dots in front of lists*/
+    list-style: none;
+    font-size: 1.5rem;
+    font-weight: 200;
+    padding-left: 550px;
+    padding-right: 10px;
+  
+}
+
+.social_media_frame {
+    display: flex;
+    justify-content: end;
+ 
+}
+
+/* Social Media Imgs */
+.social_image{
+    cursor: pointer;
+    padding-right: 40px;
+   
+}
+
+
+
+
+
+
+a {
+    /* How to get rid of underlined purple hyperlinks*/
+    text-decoration: none; 
+    /*text-decoration-color: white;*/
+    color: black;
+
+}
+
+a:hover{
+    color: #6cb0da;
+    text-decoration: underline;
+    text-decoration-color: #6cb0da;
+    text-underline-offset: .75rem;
+}
+
+.icon{
+    color: black;
+    font-size: 2rem;
+    font-weight: 500;
+    padding-left: 0px;
+}
+
+#flower{
+    padding-left: 20px;
+}
+
+.icon:hover{
+    cursor: default;
+}
+
+section {
+    padding-top: 4vh;
+    height: 96vh;
+    margin: 0 0rem;
+    box-sizing: border-box;
+    min-height: fit-content;
+}
+
+.section_frame{
+    display: flex;
+    
+}
+
+/* About Me Section */
+
+
+#profile_info{
+    display: flex;
+    justify-content: end;
+    gap: 1rem;
+    height: 88vh;
+    background-color: #6cb0da;
+    /* main page settings */
+
+}
+
+.section_pic_frame{
+    display: flex;
+    align-items:center;
+    margin-bottom: 3rem;
+}
+
+#main-pic {
+    align-items: end;
+    height: 600px;
+    padding-right: 70px;
+}
+
+
+.section_text{
+    align-self: center;
+    text-align: center;
+    color: white;
+    padding-right: 60px;
+    padding-left: 130px;
+    padding-bottom: 70px;
+   /* background-color: plum; */
+}
+
+/* .section_text p{
+    /* font-weight: 600; */
+
+
+#demo {
+    text-align: center;
+    color: white;
+    font-size: 2.7rem;
+    font-weight: 500;
+    
+}
+
+
+#section_p2{
+    font-size: 2rem;
+    font-weight: 300;
+    padding-bottom: 20px;
+    padding-top: 10px;
+}
+
+#section_p3{
+    font-size: 1.5rem;
+    font-weight: 100;
+    padding-top: 10px;
+}
+
+.name_h1 {
+    font-size: 4rem;
+    text-align: center;
+    color: rgb(107, 203, 206);
+}
+
+#linkedin_pic {
+    width: 55px;
+    height: 55px;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+}
+
+
+#happy-face {
+    margin-right: 10px; /* Adjust as needed */
+    
+}
+
+#NavBar {
+    position: fixed;
+    bottom: 80px;
+    right: 3px;
+    left: 5px;
+    z-index: -999999;
+    
+    
+}
+
+    

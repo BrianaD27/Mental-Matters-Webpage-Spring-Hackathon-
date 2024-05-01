@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rich Text Editor</title>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet"
+    />
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style4.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  </head>
+  <body>
+
+        <nav id="website_nav">
+          <div id="flower">
+              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAArNJREFUaEPtWe1xwyAMhe7SdIw6GyR7eIcmO3iPZIO6YzTdpfQAO4EgyZKMz5dr/NcG9PTx9IStefDHPrj95glg7QguEoH29NMY6z6MMc0AsDfOfXX7t0NtwNUBtKfvg7HWG18+zh1rg6gKgDR+hOPsttu/9rUiURfA+fKZpA1mY9/tNtvVAYQ8D89vY8xL773ani+OY1i329i43q81Zk5aqSLQ8jxNYfEpNBZ4/E5ZH2IArDznhKFSkYsALGq8ssiXAtAbZ48j21zzHaPXPBqiIpcB4OQ+QZPMCK4IgFGIQ5f2dAs/jD3ShbIIRIkAHy44mGQxwT4eiAiAX4AeLuiwaBSExqsABBCA3vHNScKeRdNTGP8/AaBMUiOFjBExkDgCEzTIPpyW3DK1KstbSusHPTN9OKMXsB0hjwCrkeFDy2QPiCywMoBBWY4SO7JWMWLihCVkI2EKEY1MwqHUt0sCwHpALds1M0ERgaHBhFuEaFictlIjkUIshxQZsiL3ExX7PmzV3DdMCAA81zp39Juk499tLJwzUr4E52TSO7+SSd1QgCwBTFHlUKTQHMscNUGWYRU6UB8AAGahhojk6cWiyTsjWIaPMeAAIBUnlNOFQfyLLUZTy06EBCNIo8xUuG0Og/CFl1wt3kZMFZsh9AoDoAYXjFkE/C31fChyRK6jjUxzCIfHa+9LdmLuTVsWlPlDfRFjaliiAWhSiRBj4toiKHtEOamFaoW81j734ZkEoGIMoOjE6cgkBRYAFYikFsTeZxrv7WIDUIC4SgaR9wXGiwGIQTgbf2Rgl2F5Qmf3qVwhK4oAQ1Ln5w4KFv1nRmicxQGMB4T8Dl4Gf+zFuQJ9l8sLrtHpd+oIQIclYMYBxH/m9VAciMKQlOt/jdGLAZhrjGZ91QhoDJi75glgrgfnrv8DU/73QIjO9GQAAAAASUVORK5CYII="/>
+          </div>
+          <div class="icon">Mental Matters</div>
+          <div>
+              <ul class="nav_links">
+                  <li><a href="/main page/StarterPage(1).html">Home</a></li>
+                  <li><a href="/map Page Stuff/MapPage.html">Find a Therapist</a></li>
+                  <li><a href="/jounalindex.html">Journal</a></li>
+                  <li><a href="/chatbox.html">TalkItOut</a></li>
+                  <!-- <li id="account"><a href="#account">Account</a></li> -->
+                  
+              </ul>
+          </div>
+          <div>
+              <img class="social_image" id="linkedin_pic" src="/main page/Images/blank.png" onclick="toggleAccountPage()">
+              <!-- Button to toggle the account page -->
+      <!-- <button id="accountBtn" onclick="toggleAccountPage()">Account</button> -->
+
+          <!-- Account page content -->
+              <div id="accountPage">
+                  <img class="pfp" id="pfp" src="/main page/Images/blank.png" width="200px">
+                  <p id="user"> <strong>Username: </strong> &nbsp;VsuStudent27</p>
+                  <p id="email"><strong>Email:</strong> &nbsp; student21@gmail.com</p>
+                  <br>
+                  <p id="streak">Journal Streak: 5</p>
+
+
+                  <!-- Add your account page content here -->
+              </div>
+
+              <script>
+                  // Function to toggle the visibility of the account page
+                  function toggleAccountPage() {
+                      var accountPage = document.getElementById("accountPage");
+                      if (accountPage.style.display === "none") {
+                          accountPage.style.display = "block";
+                      } else {
+                          accountPage.style.display = "none";
+                      }
+                  }
+              </script>
+          </div>
+      </nav>
+    
+    <div class="container">
+      <div class="options">
+        <!-- Text Format -->
+        <button id="bold" class="option-button format">
+          <i class="fa-solid fa-bold"></i>
+        </button>
+        <button id="italic" class="option-button format">
+          <i class="fa-solid fa-italic"></i>
+        </button>
+        <button id="underline" class="option-button format">
+          <i class="fa-solid fa-underline"></i>
+        </button>
+        <button id="strikethrough" class="option-button format">
+          <i class="fa-solid fa-strikethrough"></i>
+        </button>
+        <button id="superscript" class="option-button script">
+          <i class="fa-solid fa-superscript"></i>
+        </button>
+        <button id="subscript" class="option-button script">
+          <i class="fa-solid fa-subscript"></i>
+        </button>
+
+        <!-- List -->
+        <button id="insertOrderedList" class="option-button">
+          <div class="fa-solid fa-list-ol"></div>
+        </button>
+        <button id="insertUnorderedList" class="option-button">
+          <i class="fa-solid fa-list"></i>
+        </button>
+
+        <!-- Undo/Redo -->
+        <button id="undo" class="option-button">
+          <i class="fa-solid fa-rotate-left"></i>
+        </button>
+        <button id="redo" class="option-button">
+          <i class="fa-solid fa-rotate-right"></i>
+        </button>
+
+        <!-- Link -->
+        <button id="createLink" class="adv-option-button">
+          <i class="fa fa-link"></i>
+        </button>
+        <button id="unlink" class="option-button">
+          <i class="fa fa-unlink"></i>
+        </button>
+
+        <!-- Alignment -->
+        <button id="justifyLeft" class="option-button align">
+          <i class="fa-solid fa-align-left"></i>
+        </button>
+        <button id="justifyCenter" class="option-button align">
+          <i class="fa-solid fa-align-center"></i>
+        </button>
+        <button id="justifyRight" class="option-button align">
+          <i class="fa-solid fa-align-right"></i>
+        </button>
+        <button id="justifyFull" class="option-button align">
+          <i class="fa-solid fa-align-justify"></i>
+        </button>
+        <button id="indent" class="option-button spacing">
+          <i class="fa-solid fa-indent"></i>
+        </button>
+        <button id="outdent" class="option-button spacing">
+          <i class="fa-solid fa-outdent"></i>
+        </button>
+
+        <!-- Headings -->
+        <select id="formatBlock" class="adv-option-button">
+          <option value="H1">H1</option>
+          <option value="H2">H2</option>
+          <option value="H3">H3</option>
+          <option value="H4">H4</option>
+          <option value="H5">H5</option>
+          <option value="H6">H6</option>
+        </select>
+
+        <!-- Font -->
+        <select id="fontName" class="adv-option-button"></select>
+        <select id="fontSize" class="adv-option-button"></select>
+
+        <!-- Color -->
+        <div class="input-wrapper">
+          <input type="color" id="foreColor" class="adv-option-button" />
+          <label for="foreColor">Font Color</label>
+        </div>
+        <div class="input-wrapper">
+          <input type="color" id="backColor" class="adv-option-button" />
+          <label for="backColor">Highlight Color</label>
+          <button id="download" onclick="download()">Save</button>
+        </div>
+      </div>
+      <div id="text1-input" contenteditable="true"></div>
+    </div>
+    <script src="script.js"></script>
+
+    <audio  autoplay loop controls>
+      <source src="/main page/Images/Cocktail Hour - Aaron Kenny.mp3"
+    </audio>
+
+  </body>
+</html>

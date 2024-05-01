@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Chatbot View</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+
+<style>
+  body {
+    background-image: url(Images/botback.jpg);
+    background-size: 90%;
+    background-position:  right 50px;
+    background-attachment: fixed;
+  
+
+  }
+  </style>
+
+      <div id="content_container">
+        <div id="form_container">
+          <div id="form_header_container">
+            <h2 id="form_header">Lets talk</h2>
+          </div>
+
+          <div id="form_content_container">
+            <!-- <div id="form_content_inner_container2">
+              
+              <input type="text" placeholder="Say hello to get started!!"> 
+
+            </div> -->
+            <div id="form_content_inner_container">
+              <div class="boxed">
+                <div>
+                    <div id="chatbox">
+                        <p class="botText">
+                            <span>Hi! What would you like to know today?</span>
+                        </p>
+                    </div>
+                    <div id="userInput">
+                        <input class="userText" id="textInput" type="text" name="msg" placeholder="Message" />
+                    </div>
+                </div>
+                <script>
+                    function getBotResponse() {
+                        var rawText = $("#textInput").val();
+                        var userHtml = '<p class="userText"><span style="color: blue;">User: </span>' + rawText + "</p>";
+                        $("#textInput").val("");
+                        $("#chatbox").append(userHtml);
+                        document
+                            .getElementById("userInput")
+                            .scrollIntoView({ block: "start", behavior: "smooth" });
+                        $.get("/get", { msg: rawText }).done(function (data) {
+                            var botHtml = '<p class="botText"><span style="color: green;">ChatBot: </span>' + data + "</p>";
+                            $("#chatbox").append(botHtml);
+                            document
+                                .getElementById("userInput")
+                                .scrollIntoView({ block: "start", behavior: "smooth" });
+                        });
+                    }
+                    $("#textInput").keypress(function (e) {
+                        if (e.which == 13) {
+                            getBotResponse();
+                        }
+                    });
+                </script>
+
+<section id="NavBar">
+  <nav id="website_nav">
+    <div id="flower">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAArNJREFUaEPtWe1xwyAMhe7SdIw6GyR7eIcmO3iPZIO6YzTdpfQAO4EgyZKMz5dr/NcG9PTx9IStefDHPrj95glg7QguEoH29NMY6z6MMc0AsDfOfXX7t0NtwNUBtKfvg7HWG18+zh1rg6gKgDR+hOPsttu/9rUiURfA+fKZpA1mY9/tNtvVAYQ8D89vY8xL773ani+OY1i329i43q81Zk5aqSLQ8jxNYfEpNBZ4/E5ZH2IArDznhKFSkYsALGq8ssiXAtAbZ48j21zzHaPXPBqiIpcB4OQ+QZPMCK4IgFGIQ5f2dAs/jD3ShbIIRIkAHy44mGQxwT4eiAiAX4AeLuiwaBSExqsABBCA3vHNScKeRdNTGP8/AaBMUiOFjBExkDgCEzTIPpyW3DK1KstbSusHPTN9OKMXsB0hjwCrkeFDy2QPiCywMoBBWY4SO7JWMWLihCVkI2EKEY1MwqHUt0sCwHpALds1M0ERgaHBhFuEaFictlIjkUIshxQZsiL3ExX7PmzV3DdMCAA81zp39Juk499tLJwzUr4E52TSO7+SSd1QgCwBTFHlUKTQHMscNUGWYRU6UB8AAGahhojk6cWiyTsjWIaPMeAAIBUnlNOFQfyLLUZTy06EBCNIo8xUuG0Og/CFl1wt3kZMFZsh9AoDoAYXjFkE/C31fChyRK6jjUxzCIfHa+9LdmLuTVsWlPlDfRFjaliiAWhSiRBj4toiKHtEOamFaoW81j734ZkEoGIMoOjE6cgkBRYAFYikFsTeZxrv7WIDUIC4SgaR9wXGiwGIQTgbf2Rgl2F5Qmf3qVwhK4oAQ1Ln5w4KFv1nRmicxQGMB4T8Dl4Gf+zFuQJ9l8sLrtHpd+oIQIclYMYBxH/m9VAciMKQlOt/jdGLAZhrjGZ91QhoDJi75glgrgfnrv8DU/73QIjO9GQAAAAASUVORK5CYII="/>
+    </div>
+    <div class="icon">Mental Matters</div>
+    <div>
+        <ul class="nav_links">
+            <li><a href="/main page/StarterPage(1).html">Home</a></li>
+            <li><a href="/map Page Stuff/MapPage.html">Find a Therapist</a></li>
+            <li><a href="/main page/actualindex.html">Journal</a></li>
+            <li><a href="/chatbox.html">TalkItOut</a></li>
+            <!-- <li id="account"><a href="#account">Account</a></li> -->
+            
+        </ul>
+    </div>
+    <div>
+        <img class="social_image" id="linkedin_pic" src="./Images/blank.png" onclick="toggleAccountPage()">
+        <!-- Button to toggle the account page -->
+<!-- <button id="accountBtn" onclick="toggleAccountPage()">Account</button> -->
+
+    <!-- Account page content -->
+        <div id="accountPage">
+            <img class="pfp" id="pfp" src="./Images/blank.png" width="200px">
+            <p id="user"> <strong>Username: </strong> &nbsp;VsuStudent27</p>
+            <p id="email"><strong>Email:</strong> &nbsp; student21@gmail.com</p>
+            <br>
+            <p id="streak">Journal Streak: 5</p>
+
+
+            <!-- Add your account page content here -->
+        </div>
+
+        <script>
+            // Function to toggle the visibility of the account page
+            function toggleAccountPage() {
+                var accountPage = document.getElementById("accountPage");
+                if (accountPage.style.display === "none") {
+                    accountPage.style.display = "block";
+                } else {
+                    accountPage.style.display = "none";
+                }
+            }
+        </script>
+    </div>
+ </section>
+              
+              <!-- <input type="text"  onkeydown="display()" placeholder="Say hello to get started!!">  -->
+              <!-- <button onclick="dislplay()">Enter</button> -->
+            </div>
+            </div>
+          </div>
+        </div>
+      
+      
+        
+
+    
+</body>
+
+</html>
